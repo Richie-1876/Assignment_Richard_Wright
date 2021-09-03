@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--Font awesome 4.7 CDN -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Assignment |Richard Wright|</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="page-header">
+        <h1>ePortfolio</h1>
+        <img id="logo" src="images/mySvg.svg" alt="Scotland Flag" height="50" />
+      </header>
+      <!--end of page-header-->
+      <nav id="main-nav">
+        <div id="nav-left">
+          <div id="back-forward-btns">
+            <a href="#" onclick="history.back();"
+              ><i class="fa fa-arrow-circle-o-left"></i
+            ></a>
+            <a href="#" onclick="history.forward();"
+              ><i class="fa fa-arrow-circle-o-right"></i
+            ></a>
+          </div>
+          <ul>
+            <li>
+              <a href="#"><i class="fa fa-bars"></i></a>
+            </li>
+            <li><a href="#animation-section">Animation</a></li>
+            <li><a href="#video-section">Video</a></li>
+            <li><a href="#audio-section">Audio</a></li>
+            <li><a href="#gallery-section">Gallery</a></li>
+            <li><a href="#About-section">About</a></li>
+            <li><a href="#form-section">Form</a></li>
+            <li><a href="#location-section">Location</a></li>
+          </ul>
+        </div>
+        <!--end of nav-left-->
+        <div id="nav-right">
+          <li>
+            <a
+              ><i class="fa fa-sliders" onclick="togglePreferencePanel()"></i
+            ></a>
+          </li>
+          <div id="preference-panel">
+            <!-- Preference panel layout achieved using a table -->
+            <table>
+              <tr>
+                <td>Background color &nbsp;&nbsp;</td>
+                <td>
+                  <input type="color" name="" id="background-color-picker" />
+                </td>
+              </tr>
+              <tr>
+                <td>Font color</td>
+                <td><input type="color" name="" id="font-color-picker" /></td>
+              </tr>
+              <tr>
+                <td id="slider-displayed-font-size">Font size</td>
+                <td>
+                  <input
+                    type="range"
+                    min="10"
+                    max="32"
+                    value="16"
+                    id="font-range-slider"
+                  />
+                </td>
+              </tr>
+            </table>
+            <br />
+            <button id="prefs-save-btn" class="general-btns">Save</button>
+            <button id="prefs-cancel-btn" class="general-btns">Cancel</button>
+            <button id="prefs-reset-defaults-btn" class="general-btns">
+              Reset to default
+            </button>
+            <!--For testing preferences panel - changing preferences -->
+            <!-- <br />
+            <button id="test-btn">test</button> -->
+
+            <br />
+            <button id="reset-username-btn" class="general-btns">
+              Reset Username
+            </button>
+          </div>
+          <!--end of preference panel-->
+        </div>
+        <!--end of nav-right-->
+      </nav>
+      <!--end of main-nav-->
+      <main id="main-content">
+        <section id="username-section" class="main-section">
+          <h2>Welcome: <span id="username"></span></h2>
+        </section>
+        <!-- 1em -->
+        <section id="animation-section" class="main-section">
+          <h2>Animation</h2>
+          <p>TODO Explain how the animation works</p>
+          <br />
+          <br />
+          <div id="animation-area">
+            <div id="animation-target"></div>
+          </div>
+          <br />
+          <div id="animation-controls">
+            <button
+              id="animation-start-btn"
+              class="general-btns animation-btns"
+            >
+              Start
+            </button>
+            <button
+              id="animation-pause-btn"
+              class="general-btns animation-btns"
+            >
+              Pause
+            </button>
+            <div>
+              <input
+                type="range"
+                id="animation-speed-slider"
+                min="1"
+                max="5"
+                value="2"
+              />
+              <span id="animation-duration-display"></span>
+            </div>
+          </div>
+        </section>
+        <!--end of animation section-->
+        <section id="video-section" class="main-section">
+          <h2>VIDEO</h2>
+          <div id="youtube-video-container">
+            <h2>YouTube Hosted Video</h2>
+            <iframe
+              id="youtube-embed"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/6BW5j3PgW7Y"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div id="hosted-video-container">
+            <h2>Locally Hosted Video</h2>
+            <video controls id="hosted-vid">
+              <source src="video/Movie.mp4" type="video/mp4" />
+              <!-- <source src="video/mov_bbb.mov" type="video/mov"> -->
+              This browser does not support HTML5 video
+            </video>
+          </div>
+        </section>
+        <!--end of video section-->
+        <section id="audio-section" class="main-section">
+          <h2>Audio</h2>
+          <div id="audio-container">
+            <img
+              id="audio-img"
+              src="images/itWontBeLikeThisAllTheTime.jpeg"
+              alt="It wont be like this all the time album cover. Green highlighting"
+              srcset=""
+            />
+            <audio controls>
+              <source
+                src="audio/The Twilight Sad - IT WON-T BE LIKE THIS ALL THE TIME LIVE - 08 I-m Not Here -Missing Face- Live-[AudioTrimmer.com].mp3"
+                type="audio/mp3"
+              />
+            </audio>
+          </div>
+        </section>
+        <!--end of audio section-->
+        <section id="gallery-section" class="main-section">
+          <h2>Gallery</h2>
+          <!-- Slideshow container -->
+          <div class="slideshow-container">
+            <!-- Full-width images with number and caption text -->
+            <div class="slides fade-effect">
+              <div class="slide-number-text">1 / 5</div>
+              <img class="slide" src="images/Album.jpeg" />
+              <div class="text">IT WON/T BE LIKE THIS ALL THE TIME</div>
+            </div>
+
+            <div class="slides fade-effect">
+              <div class="slide-number-text">2 / 5</div>
+              <img class="slide" src="images/nobodyWantsToBeHere.jpeg" />
+              <div class="text">Nobody Wants To Be Here</div>
+            </div>
+
+            <div class="slides fade-effect">
+              <div class="slide-number-text">3 / 5</div>
+              <img class="slide" src="images/theSad.jpeg" />
+              <div class="text">The Twilight Sad</div>
+            </div>
+
+            <div class="slides fade-effect">
+              <div class="slide-number-text">4 / 5</div>
+              <img class="slide" src="images/TwilightSad_HydePark.jpeg" />
+              <div class="text">The Twilight Sad (Hyde Park)</div>
+            </div>
+
+            <div class="slides fade-effect">
+              <div class="slide-number-text">5 / 5</div>
+              <img class="slide" src="images/crowd.jpeg" />
+              <div class="text">The Twilight Sad (Hyde Park Crowd)</div>
+            </div>
+
+            <!-- Next and prev btns -->
+            <a class="prev" onclick="switchSlides(-1)">&#10094;</a>
+            <a class="next" onclick="switchSlides(1)">&#10095;</a>
+          </div>
+          <br />
+
+          <!-- bullets -->
+          <div style="text-align: center">
+            <span class="bullet" onclick="currSlide(1)"></span>
+            <span class="bullet" onclick="currSlide(2)"></span>
+            <span class="bullet" onclick="currSlide(3)"></span>
+            <span class="bullet" onclick="currSlide(4)"></span>
+            <span class="bullet" onclick="currSlide(5)"></span>
+          </div>
+        </section>
+        <!--end of gallery section-->
+        <section id="About-section" class="main-section">
+          <h2>&lt;THE TWILIGHT SAD&gt;</h2>
+
+          <p>
+            <span style="color: green; font-weight: bold"
+              >The Twilight Sad</span
+            >
+            are a
+            <span style="color: #31708e; font-weight: bold">Scottish</span>
+            post-punk/indie rock band, comprising James Graham
+            <sup>(vocals)</sup>, Andy MacFarlane <sup>(guitar)</sup>, Johnny
+            Docherty <sup>(bass)</sup>, Brendan Smith <sup>(keyboards)</sup> and
+            Sebastien Schultz <sup>(drums)</sup>. They are all super<sup
+              >script</sup
+            >
+            on their instruments.
+          </p>
+          <p>
+            Their 2007 debut album, Fourteen Autumns & Fifteen Winters, drew
+            widespread acclaim from critics and anyone with ears, who noted
+            Graham's thick Scottish accent and MacFarlane's dense sonic walls of
+            <sub>shoegazing</sub> guitar and wheezing accordion. The Twilight
+            Sad's notoriously loud live performances have been described as
+            "completely ear-splitting"
+          </p>
+
+          <p>
+            These spaces "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" where create with the
+            <span style="font-weight: bold">&amp;nbsp;</span> entity encoding.
+          </p>
+
+          <p style="font-family: 'Times New Roman', Times, serif">
+            Their second album, Forget the Night Ahead, marked a shift in the
+            band's direction; lyrically more personal and musically darker and
+            more streamlined, it was released in 2009 to acclaim.
+          </p>
+
+          <p class="yanone-kaffeesatt">
+            The band describes their sound as "folk with layers of noise", and
+            music critics have described the band as
+            <i>"perennially unhappy"</i> in italics.
+          </p>
+          <h3>Using the &lt;pre&gt; tag to display preformatted text.....</h3>
+          <pre>
+ ______________ ______________    
+ \__    ___/   |   \_   _____/    
+   |    | /    ~    \    __)_     
+   |    | \    Y    /        \    
+   |____|  \___|_  /_______  /    
+                 \/        \/     
+   _________   _____  ________    
+  /   _____/  /  _  \ \______ \   
+  \_____  \  /  /_\  \ |    |  \  
+  /        \/    |    \|    `   \ 
+ /_______  /\____|__  /_______  / 
+         \/         \/        \/  
+            </pre
+          >
+        </section>
+        <!--end of gallery section-->
+        <section id="form-section" class="main-section">
+          <h2>Contact Form</h2>
+          <form id="contact-form">
+            <table>
+              <tr>
+                <td>Name:</td>
+                <td>
+                  <input
+                    type="text"
+                    name="name"
+                    id="contact-form-name"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>
+                  <input
+                    type="email"
+                    name="email"
+                    id="contact-form-email"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Age:</td>
+                <td>
+                  <input
+                    type="number"
+                    name="age"
+                    id="contact-form-age"
+                    min="1"
+                    max="125"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>DOB:</td>
+                <td>
+                  <input
+                    type="date"
+                    name="date"
+                    id="contact-form-dob"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Gender:</td>
+                <td>
+                  <label for="gender_0"
+                    ><input
+                      type="radio"
+                      name="gender"
+                      id="contact-form-gender_0"
+                      required
+                    />Male</label
+                  >
+                  <label for="gender_1"
+                    ><input
+                      type="radio"
+                      name="gender"
+                      id="contact-form-gender_1"
+                    />Female</label
+                  >
+                </td>
+              </tr>
+              <tr>
+                <!-- Checkboxes input -->
+                <td>Interests:</td>
+                <td>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      value="checkbox"
+                      id="contact-form-interests_0"
+                    />
+                    Gigs</label
+                  >
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      value="checkbox"
+                      id="contact-form-interests_1"
+                    />
+                    Albums</label
+                  >
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      value="checkbox"
+                      id="contact-form-interests_2"
+                    />
+                    Other</label
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Message:</td>
+                <td>
+                  <textarea
+                    name="message"
+                    id="contact-form-message"
+                    required
+                  ></textarea>
+                </td>
+              </tr>
+            </table>
+            <div id="form-btns">
+              <input
+                id="submit-btn"
+                class="contact-btns general-btns"
+                type="submit"
+                value="Submit"
+              />
+
+              <input
+                type="reset"
+                id="reset-btn"
+                class="contact-btns general-btns"
+              />
+            </div>
+          </form>
+        </section>
+        <!--end of form section-->
+        <section id="location-section" class="main-section">
+          <h2>Location</h2>
+          <div id="map-container">
+            <div id="map">
+              <iframe
+                width="500"
+                height="400"
+                src="https://www.bing.com/maps/embed?h=400&w=500&cp=52.35479999999998~-7.9348000000000045&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                scrolling="no"
+              >
+              </iframe>
+              <div
+                style="
+                  white-space: nowrap;
+                  text-align: center;
+                  width: 500px;
+                  padding: 6px 0;
+                  background-color: #8fc1e3;
+                "
+              >
+                <a
+                  id="largeMapLink"
+                  target="_blank"
+                  href="https://www.bing.com/maps?cp=52.35479999999998~-7.9348000000000045&amp;sty=r&amp;lvl=11&amp;FORM=MBEDLD"
+                  >View Larger Map</a
+                >
+                &nbsp; | &nbsp;
+                <a
+                  id="dirMapLink"
+                  target="_blank"
+                  href="https://www.bing.com/maps/directions?cp=52.35479999999998~-7.9348000000000045&amp;sty=r&amp;lvl=11&amp;rtp=~pos.52.35479999999998_-7.9348000000000045____&amp;FORM=MBEDLD"
+                  >Get Directions</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--end of location section-->
+      </main>
+      <!--end of main-content-->
+      <footer id="page-footer">
+        <h3>Copyright &copy Richard Wright</h3>
+      </footer>
+      <!--end of main-footer-->
+    </div>
+    <!-- end of wrapper -->
+    <script src="js/rgbToHex.js"></script>
+    <!-- utility function for converting rgb values to hex values -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
