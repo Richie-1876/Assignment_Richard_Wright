@@ -156,6 +156,7 @@ Element:first-child is a sudo selector  */
   border-radius: 50px;
   /* height: 400px; */
   padding: 20px;
+  padding-bottom: 50px;
   margin: 20px;
   /* Box shadow example */
   box-shadow: 5px 5px 5px var(--highlight);
