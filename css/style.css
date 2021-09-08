@@ -37,6 +37,44 @@ body {
 .yanone-kaffeesatt {
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
+
+/*******************************************
+                MODAL 
+*******************************************/
+#modal {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  /* Center elements vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+}
+#assignment-details {
+  background-color: #31708e;
+  height: 30%;
+  width: 50%;
+  border-radius: 50px;
+  padding: 40px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  text-shadow: 1px 1px 1px #5a6066;
+  border: 2px solid var(--border-color1);
+  box-shadow: 5px 5px 5px var(--highlight);
+}
+#assignment-details h3 {
+  font-size: larger;
+}
+#modal-btn {
+  background-color: rgb(12, 235, 97);
+}
 /*******************************************
               HEADER  
 *******************************************/
@@ -104,7 +142,7 @@ Element:first-child is a sudo selector  */
   /* Text-shadow example */
   text-shadow: 1px 1px 2px #f2f3f4;
   line-height: 50px;
-  font-size: 20px;
+  font-size: 30px;
   transition: all 0.15s;
 }
 #main-nav a:visited {
@@ -145,6 +183,26 @@ Element:first-child is a sudo selector  */
   display: none;
 }
 
+/* TOOLTIP */
+#tooltip {
+  background-color: black;
+  color: white;
+  width: 125px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50px;
+  line-height: 25px;
+  position: absolute;
+  top: -100;
+  left: -75px;
+  visibility: hidden;
+  /* transition: all 0.3s; */
+}
+
+#nav-right:hover #tooltip {
+  visibility: visible;
+}
+
 /*******************************************
                 MAIN CONTENT
 *******************************************/
@@ -173,6 +231,10 @@ Element:first-child is a sudo selector  */
 }
 main section {
   background-color: var(--main-nav);
+}
+main section p {
+  padding: 10px;
+  text-align: center;
 }
 main h2 {
   text-shadow: 1px 1px 2px #f2f3f4;

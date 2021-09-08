@@ -3,6 +3,9 @@
 /////////////////////////////////////////
 let main = document.getElementById("main-content");
 let sections = main.getElementsByTagName("section");
+// MODAL ELEMENTS
+let modal = document.getElementById("modal");
+let modalBtn = document.getElementById("modal-btn");
 // PREFERENCE PANEL ELEMENTS
 let panel = document.getElementById("preference-panel");
 let bgColorPicker = document.getElementById("background-color-picker");
@@ -38,6 +41,11 @@ let slideIdx = 1;
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<< CLICK >>>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+// Event Listener (click) for MODAL BUTTON
+modalBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  localStorage.setItem("hideModal", "CLICKED");
+});
 // Event Listener (click) for ANIMATION START BUTTON
 animationStartBtn.addEventListener("click", () => {
   animationTarget.style.animationPlayState = "running";
@@ -58,6 +66,7 @@ resetUsernameBtn.addEventListener("click", () => {
   //save response to local storage
   saveUsernameToLocalStorage(username);
   //display value stored in local storage
+  alert("The username has been changed");
   usernameDisplay.textContent = localStorage.username;
   togglePreferencePanel();
 });
@@ -136,6 +145,9 @@ animationTarget.addEventListener("animationiteration", () => {
  * Parameters: (0)
  ****************************************/
 window.onload = function () {
+  if (localStorage.getItem("hideModal") == "CLICKED") {
+    modal.style.display = "none";
+  }
   //****** Defaults preferences object *******//
   let defaults = {
     backgroundColor: RGBToHex(getComputedStyle(sections[0]).backgroundColor),

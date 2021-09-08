@@ -14,6 +14,16 @@
     <title>Assignment |Richard Wright|</title>
   </head>
   <body>
+    <div id="modal">
+      <div id="assignment-details">
+        <h3>Richard Wright</h3>
+        <h3>
+          Assignment 7630-635 <br />Programming in HTML with JavaScript and CSS3
+        </h3>
+        <h3>ePortfolio Site 1</h3>
+        <button class="general-btns" id="modal-btn">Enter</button>
+      </div>
+    </div>
     <div id="wrapper">
       <header id="page-header">
         <h1>ePortfolio</h1>
@@ -45,6 +55,7 @@
         </div>
         <!--end of nav-left-->
         <div id="nav-right">
+          <div id="tooltip">Change Settings</div>
           <li>
             <a
               ><i class="fa fa-sliders" onclick="togglePreferencePanel()"></i
@@ -138,6 +149,20 @@
         <!--end of animation section-->
         <section id="video-section" class="main-section">
           <h2>Video</h2>
+          <p>
+            In this section, I have included a Youtube video utilising an iframe
+            element and the embed feature available as a share option on
+            youtube. The iframe is within a containing Div which I have styled
+            to match the rest of the site.
+            <br />
+            <br />
+
+            I have also included a Hosted video example. This is achieved using
+            the HTML5 semantic video tag, The key word "controls" gives the
+            video player user controls and different source files are accessed
+            through relative paths to the video folder. This is to ensure that
+            as many browsers as possible can play the content.
+          </p>
           <div id="youtube-video-container">
             <h2>YouTube Hosted Video</h2>
             <iframe
@@ -153,7 +178,7 @@
           </div>
           <div id="hosted-video-container">
             <h2>Locally Hosted Video</h2>
-            <video controls autoplay muted id="hosted-vid">
+            <video controls muted id="hosted-vid">
               <source src="video/mov_bbb.mp4" type="video/mp4" />
               <source src="video/mov_bbb.ogm" type="video/ogg" />
 
@@ -164,6 +189,15 @@
         <!--end of video section-->
         <section id="audio-section" class="main-section">
           <h2>Audio</h2>
+          <p>
+            In this section I have included an audio file using the HTML5
+            semantic audio tag. Similar to the video tag I provide it with the
+            keyword "controls" to allow the user to interact with it and provide
+            a relative path to the various source options contained in the
+            sample audio folder, within the audio folder. I have included an
+            image and both elements are held within container divs so they can
+            be styled uniformly.
+          </p>
           <div id="audio-container">
             <img
               id="audio-img"
@@ -173,8 +207,16 @@
             />
             <audio controls>
               <source
-                src="audio/15 Cold Days From The Birdhouse Live-[AudioTrimmer.com].mp3"
-                type="audio/mp3"
+                src="audio/sample audio/15 Cold Days From The Birdhouse Live-[AudioTrimmer.com].mp3"
+                type="audio/mpeg"
+              />
+              <source
+                src="audio/sample audio/sample_aduio.wav"
+                type="audio/wav"
+              />
+              <source
+                src="audio/sample audio/sample_aduio.ogg"
+                type="audio/ogg"
               />
             </audio>
           </div>
@@ -182,6 +224,25 @@
         <!--end of audio section-->
         <section id="gallery-section" class="main-section">
           <h2>Gallery</h2>
+          <p>
+            In this section, I have created an image gallery using HTML, CSS and
+            javascript.
+            <br /><br />
+            HTML:
+            <br />
+            The images are included using the HTML5 semantic img tag.
+            <br /><br />
+            CSS
+            <br />
+            CSS is used to apply various classes which help to control the
+            transitions and the appearance if the images.
+            <br /><br />
+            javaScript:
+            <br />
+            javaScript is used to apply an active class to the selected image.
+            There are forward and back buttons, and bullets which allow the user
+            to select a specific image.
+          </p>
           <!-- Slideshow container -->
           <div class="slideshow-container">
             <!-- Full-width images with number and caption text -->
@@ -232,7 +293,14 @@
         </section>
         <!--end of gallery section-->
         <section id="About-section" class="main-section">
-          <h2>&lt;THE TWILIGHT SAD&gt;</h2>
+          <h2>ABOUT</h2>
+          <p>
+            In this section, I have included various examples of inline styling
+            and special characters such as HTML entities, bold and italic font,
+            and subscript and superscript examples. I have also included the pre
+            tag and an example usage.
+          </p>
+          <h3>&lt;THE TWILIGHT SAD&gt;</h3>
 
           <p>
             <span style="color: green; font-weight: bold"
@@ -290,6 +358,24 @@
         <!--end of gallery section-->
         <section id="form-section" class="main-section">
           <h2>Contact Form</h2>
+          <p>
+            In this section, I have created a contact form using HTML and CSS
+            <br /><br />
+            HTML:
+            <br />
+            The form itself is created with an HTML 5 semantic form tag. Each
+            input I use the relevant type including text for the name, email for
+            email, date for DOB, radio buttons for gender and checkboxes for the
+            options. I have included the keyword "required" to allow for client
+            side validation utilising the input types. There are 2 buttons, one
+            to clear/reset the form and a dummy submit button. I have used a
+            table tag to help with alignment.
+            <br /><br />
+            CSS:
+            <br />
+            The styling has been used to be responsive, shrinking on smaller
+            screen.
+          </p>
           <form id="contact-form">
             <table>
               <tr>
@@ -421,6 +507,9 @@
         <!--end of form section-->
         <section id="location-section" class="main-section">
           <h2>Location</h2>
+          <p>
+            In this section, I have included an iframe, which holds a Bing map.
+          </p>
           <div id="map-container">
             <div id="map">
               <iframe
