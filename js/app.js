@@ -6,6 +6,7 @@ let sections = main.getElementsByTagName("section");
 // MODAL ELEMENTS
 let modal = document.getElementById("modal");
 let modalBtn = document.getElementById("modal-btn");
+let modalDetails = document.getElementById("assignment-details");
 // PREFERENCE PANEL ELEMENTS
 let panel = document.getElementById("preference-panel");
 let bgColorPicker = document.getElementById("background-color-picker");
@@ -131,11 +132,20 @@ panel.addEventListener("change", () => {
 // Event listener (animationiteration) for ANIMATION TARGET ELEMENT
 animationTarget.addEventListener("animationiteration", () => {
   // Create new Audio object (relative path to audio file)
-  let audio = new Audio("../audio/sound-effects/End_Fx.mp3");
+  let audio = new Audio("../audio/sound-effects/beep.mp3");
   // play audio
   audio.play();
 });
 
+//<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+//<<<<<<<<<<<<< MOUSE >>>>>>>>>>>>>>>>>>//
+//<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+modalDetails.addEventListener("mouseout", () => {
+  modalDetails.style.backgroundColor = "Blue";
+});
+modalDetails.addEventListener("mouseover", () => {
+  modalDetails.style.backgroundColor = "lightblue";
+});
 /////////////////////////////////////////
 //        WINDOW ONLOAD
 /////////////////////////////////////////

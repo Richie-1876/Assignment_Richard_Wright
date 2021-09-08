@@ -114,7 +114,16 @@
         <!-- 1em -->
         <section id="animation-section" class="main-section">
           <h2>Animation</h2>
-          <p>TODO Explain how the animation works</p>
+          <p>
+            In this section, I have created an area within which an absolutely
+            positioned element can be animated using keyframes. I have also
+            included buttons to start and pause the animation using the
+            (animationState) property and a slider to adjust the speed
+            (animationDuration). Using javaScript when each button is clicked,
+            or the slider input changes the animation is affected. There are
+            also sounds that play based on certian conditions (end of an
+            iteration or when the pause button is clicked)
+          </p>
           <br />
           <br />
           <div id="animation-area">
@@ -150,18 +159,13 @@
         <section id="video-section" class="main-section">
           <h2>Video</h2>
           <p>
+            <br /><br />
             In this section, I have included a Youtube video utilising an iframe
             element and the embed feature available as a share option on
             youtube. The iframe is within a containing Div which I have styled
             to match the rest of the site.
             <br />
             <br />
-
-            I have also included a Hosted video example. This is achieved using
-            the HTML5 semantic video tag, The key word "controls" gives the
-            video player user controls and different source files are accessed
-            through relative paths to the video folder. This is to ensure that
-            as many browsers as possible can play the content.
           </p>
           <div id="youtube-video-container">
             <h2>YouTube Hosted Video</h2>
@@ -176,6 +180,13 @@
               allowfullscreen
             ></iframe>
           </div>
+          <p>
+            I have also included a Hosted video example. This is achieved using
+            the HTML5 semantic video tag, The key word "controls" gives the
+            video player user controls and different source files are accessed
+            through relative paths to the video folder. This is to ensure that
+            as many browsers as possible can play the content.
+          </p>
           <div id="hosted-video-container">
             <h2>Locally Hosted Video</h2>
             <video controls muted id="hosted-vid">
@@ -376,7 +387,11 @@
             The styling has been used to be responsive, shrinking on smaller
             screen.
           </p>
-          <form id="contact-form">
+          <form
+            method="POST"
+            action="https://softwareacademy.ie/php/send-email.php"
+            id="contact-form"
+          >
             <table>
               <tr>
                 <td>Name:</td>
@@ -553,6 +568,7 @@
       </footer>
       <!--end of main-footer-->
     </div>
+
     <!-- end of wrapper -->
     <script src="js/rgbToHex.js"></script>
     <!-- utility function for converting rgb values to hex values -->

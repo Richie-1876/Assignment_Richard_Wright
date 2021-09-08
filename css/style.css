@@ -142,7 +142,7 @@ Element:first-child is a sudo selector  */
   /* Text-shadow example */
   text-shadow: 1px 1px 2px #f2f3f4;
   line-height: 50px;
-  font-size: 30px;
+  font-size: 25px;
   transition: all 0.15s;
 }
 #main-nav a:visited {
@@ -314,6 +314,7 @@ main h2 {
 #animation-target {
   height: 20px;
   width: 20px;
+  border-radius: 50%;
   background-color: var(--highlight);
   position: absolute;
   /* animation: animation1 2s infinite; */
@@ -338,13 +339,29 @@ main h2 {
 *******************************************/
 @keyframes animation1 {
   0% {
-    left: 0%;
+    left: 10%;
+    top: 10%;
+    background-color: red;
+  }
+  25% {
+    left: 90%;
+    top: 10%;
+    background-color: yellow;
   }
   50% {
-    left: 97%;
+    left: 90%;
+    top: 80%;
+    background-color: pink;
+  }
+  75% {
+    left: 10%;
+    top: 80%;
+    background-color: blue;
   }
   100% {
-    left: 0%;
+    left: 10%;
+    top: 10%;
+    background-color: orange;
   }
 }
 /*******************************************
