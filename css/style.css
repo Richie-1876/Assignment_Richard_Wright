@@ -22,7 +22,7 @@ ROOT ELEMENT OF THE DOCUMENT (HTML ELEMENT)
   --border-color2: #31708e;
   --body-color: #31708e;
   --main-nav: #5085a5;
-  --highlight: #ffffff;
+  --highlight: white;
   /* FONTS */
   --font1: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --font2: "Arial";
@@ -107,9 +107,15 @@ Element:first-child is a sudo selector  */
   font-size: 20px;
   transition: all 0.15s;
 }
+#main-nav a:visited {
+  color: black;
+}
 #main-nav a:hover {
   color: #f7f9fb;
   /* background-color: var(--header-color1); */
+}
+#main-nav a:active {
+  color: #f7f9fb;
 }
 
 #nav-right li {
@@ -603,6 +609,15 @@ textarea {
   }
   #youtube-video-container {
     height: 300px;
+  }
+  #form-section input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    width: 175px;
+  }
+  textarea {
+    width: 175px;
   }
 
   /* Display burger menu */

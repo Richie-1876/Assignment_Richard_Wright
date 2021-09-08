@@ -38,13 +38,20 @@ let slideIdx = 1;
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<< CLICK >>>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+// Event Listener (click) for ANIMATION START BUTTON
 animationStartBtn.addEventListener("click", () => {
   animationTarget.style.animationPlayState = "running";
 });
+// Event Listener (click) for ANIMATION PAUSE BUTTON
 animationPauseBtn.addEventListener("click", () => {
+  // update the play state to paused
   animationTarget.style.animationPlayState = "paused";
+  let audio = new Audio("../audio/sound-effects/Error.mp3");
+  // play sound when pause it clicked.
+  audio.play();
 });
 
+// Event Listener (click) for RESET USERNAME BUTTON
 resetUsernameBtn.addEventListener("click", () => {
   //prompt the user
   let username = prompt("Ok, What can I call you then?");
@@ -55,13 +62,13 @@ resetUsernameBtn.addEventListener("click", () => {
   togglePreferencePanel();
 });
 
-// Event Listener (click) for test button
+// Event Listener (click) for TEST BUTTON
 // testBtn.addEventListener("click", () => {
 //   applyPreferences(testPreferences);
 //   // console.log(confirmAtLeast1InterestChecked());
 // });
 
-// Event listener (click) for reset default button.
+// Event listener (click) for RESET DEFAULTS BUTTON.
 prefsResetDefaults.addEventListener("click", () => {
   if (localStorage["defaults"] != null) {
     // apply the preferences to the page
@@ -73,13 +80,13 @@ prefsResetDefaults.addEventListener("click", () => {
     );
   }
 });
-// Event listener (click) for prefs save button.
+// Event listener (click) for PREFERENCES SAVE BUTTON.
 prefsSaveButton.addEventListener("click", () => {
   // let userPreferences = getPreferencePanelValues();
   savePreferences(getPreferencePanelValues(), "userPreferences");
   togglePreferencePanel();
 });
-
+// Event listener (click) for PREFERENCES CANCEL BUTTON.
 prefsCancelButton.addEventListener("click", () => {
   if (localStorage["userPreferences"]) {
     applyPreferences(getPreferences("userPreferences"));
@@ -92,18 +99,32 @@ prefsCancelButton.addEventListener("click", () => {
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<< CHANGE >>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+// Event listener (change) for ANIMATION SPEED SLIDER.
 animationSpeedSlider.addEventListener("change", (e) => {
+  // Change the animation duration/Speed.
   animationTarget.style.animationDuration = `${e.target.value}s`;
+  // Display the selected value in Seconds.
   animationDurationDisplay.innerHTML = `${e.target.value}s`;
 });
-// Event listener (change) for fontSizeSlider element.
+// Event listener (change) for FONT SIZE SLIDER.
 fontSizeSlider.addEventListener("change", (e) => {
   setPreferencePanelDisplayedFontSize();
 });
 
-// Event listener (change) for any element within the preferences panel
+// Event listener (change) for ANY ELEMENT WITHIN PREFERENCES PANEL
 panel.addEventListener("change", () => {
   applyPreferences(getPreferencePanelValues());
+});
+
+//<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+//<<<<<< ANIMATION ITERATION >>>>>>>>>>>>//
+//<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
+// Event listener (animationiteration) for ANIMATION TARGET ELEMENT
+animationTarget.addEventListener("animationiteration", () => {
+  // Create new Audio object (relative path to audio file)
+  let audio = new Audio("../audio/sound-effects/End_Fx.mp3");
+  // play audio
+  audio.play();
 });
 
 /////////////////////////////////////////
