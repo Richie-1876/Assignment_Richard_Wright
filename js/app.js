@@ -156,7 +156,9 @@ modalDetails.addEventListener("mouseover", () => {
  ****************************************/
 window.onload = function () {
   if (localStorage.getItem("hideModal") == "CLICKED") {
-    modal.style.display = "none";
+    modal.style.visibility = "hidden";
+  } else {
+    modal.style.visibility = "visible";
   }
   //****** Defaults preferences object *******//
   let defaults = {

@@ -50,6 +50,7 @@ body {
   bottom: 0;
   z-index: 1000;
   display: flex;
+  visibility: hidden;
   /* Center elements vertically and horizontally */
   justify-content: center;
   align-items: center;
