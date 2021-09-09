@@ -24,7 +24,7 @@ let checkBoxes = document.getElementsByName("interests");
 // USERNAME SECTION ELEMENTS
 let usernameDisplay = document.getElementById("username");
 let resetUsernameBtn = document.getElementById("reset-username-btn");
-//ANIMATION ELEMENTS
+// ANIMATION SECTION ELEMENTS
 let animationStartBtn = document.getElementById("animation-start-btn");
 let animationPauseBtn = document.getElementById("animation-pause-btn");
 let animationTarget = document.getElementById("animation-target");
@@ -32,10 +32,21 @@ let animationSpeedSlider = document.getElementById("animation-speed-slider");
 let animationDurationDisplay = document.getElementById(
   "animation-duration-display"
 );
+
 // GALLERY SLIDE SHOW ELEMENTS
-var allSlides = document.getElementsByClassName("slides");
-var bullets = document.getElementsByClassName("bullet");
+let allSlides = document.getElementsByClassName("slides");
+let bullets = document.getElementsByClassName("bullet");
 let slideIdx = 1;
+
+// LOCATION SECTION ELEMENTS
+let getLocationBtn = document.getElementById("get-location");
+let latDisplay = document.getElementById("lat-display");
+let longDisplay = document.getElementById("long-display");
+let bingMap = document.getElementById("bing-map");
+// NAV SECTION ELEMENTS
+let burger = document.getElementById("burger");
+let menuLinks = document.getElementById("main-page-links-list");
+console.log(menuLinks);
 /////////////////////////////////////////
 //         EVENT LISTENERS
 /////////////////////////////////////////
@@ -47,6 +58,7 @@ modalBtn.addEventListener("click", () => {
   modal.style.display = "none";
   localStorage.setItem("hideModal", "CLICKED");
 });
+
 // Event Listener (click) for ANIMATION START BUTTON
 animationStartBtn.addEventListener("click", () => {
   animationTarget.style.animationPlayState = "running";
@@ -105,6 +117,16 @@ prefsCancelButton.addEventListener("click", () => {
     applyPreferences(getPreferences("defaults"));
     togglePreferencePanel();
   }
+});
+
+// Event listener (click) for GET LOCATION BUTTON.
+getLocationBtn.addEventListener("click", () => {
+  console.log("clicked");
+  getAndDisplayLocation();
+});
+
+burger.addEventListener("click", () => {
+  toggleMenuItems();
 });
 //<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>//
 //<<<<<<<<<<<<< CHANGE >>>>>>>>>>>>>>>>>//
@@ -291,7 +313,27 @@ function togglePreferencePanel() {
     panel.style.display = "none";
   }
 }
+/////////////////////////////////////////
+// FUNCTION TO TOGGLE THE DISPLAY
+//   OF USER PREFERENCES PANEL
+/////////////////////////////////////////
+/****************************************
+ * Name: togglePreferencePanel()
+ * Purpose: toggle between display block and display none
+ * Parameters: (0)
+ * returns: No return Value.
+ ****************************************/
 
+function toggleMenuItems() {
+  //get css style declaration object of the current computed styling of the element.
+  // let menuStyle = getComputedStyle(menuLinks);
+  console.log("getting style");
+  if (menuLinks.style.display == "block") {
+    menuLinks.style.display = "none";
+  } else {
+    menuLinks.style.display = "block";
+  }
+}
 /////////////////////////////////////////
 //    Function to set preferences
 /////////////////////////////////////////
@@ -449,4 +491,38 @@ function showSlides(n) {
   }
   allSlides[slideIdx - 1].style.display = "block";
   bullets[slideIdx - 1].className += " active";
+}
+/////////////////////////////////////////
+// Function to display user position
+/////////////////////////////////////////
+/****************************************
+ * Name: getAndDisplayLocation()
+ * Purpose: Get the users location usint the location API and display coords and position on map.
+ * Parameters: (0)
+ * Returns: no return value
+ ****************************************/
+function getAndDisplayLocation() {
+  console.log("clicked");
+  let mapLink = "";
+  //function to run if successful
+  function success(position) {
+    const lat = position.coords.latitude;
+    const long = position.coords.longitude;
+
+    latDisplay.textContent += `${lat}`;
+    longDisplay.textContent += `${long}`;
+
+    mapLink = `https://www.bing.com/maps/embed?h=400&w=500&cp=${lat}~-${long}&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8`;
+
+    bingMap.src = mapLink;
+  }
+  function error() {
+    console.log("something went wrong");
+  }
+  if (!navigator.geolocation) {
+    latDisplay.textContent = "Geolocation is not supported by your browser";
+    longDisplay.textContent = "";
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 }
