@@ -501,9 +501,6 @@ function showSlides(n) {
  * Returns: no return value
  ****************************************/
 function getAndDisplayLocation() {
-  function error() {
-    console.log("something went wrong");
-  }
   if (!navigator.geolocation) {
     latDisplay.textContent = "Geolocation is not supported by your browser";
     longDisplay.textContent = "";

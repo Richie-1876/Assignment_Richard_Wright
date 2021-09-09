@@ -265,6 +265,9 @@ main section p {
 main h2 {
   text-shadow: 1px 1px 2px #f2f3f4;
 }
+article {
+  text-align: center;
+}
 /*******************************************
                 PREF PANEL SECTION
 *******************************************/
