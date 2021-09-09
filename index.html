@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -110,21 +116,23 @@
       <!--end of main-nav-->
       <main id="main-content">
         <section id="username-section" class="main-section">
-          <h2>Welcome: <span id="username"></span></h2>
+          <h2>Welcome <br /><br /><span id="username"></span></h2>
         </section>
         <!-- 1em -->
         <section id="animation-section" class="main-section">
           <h2>Animation</h2>
-          <p>
-            In this section, I have created an area within which an absolutely
-            positioned element can be animated using keyframes. I have also
-            included buttons to start and pause the animation using the
-            (animationState) property and a slider to adjust the speed
-            (animationDuration). Using javaScript when each button is clicked,
-            or the slider input changes the animation is affected. There are
-            also sounds that play based on certian conditions (end of an
-            iteration or when the pause button is clicked)
-          </p>
+          <article>
+            <p>
+              In this section, I have created an area within which an absolutely
+              positioned element can be animated using keyframes. I have also
+              included buttons to start and pause the animation using the
+              (animationState) property and a slider to adjust the speed
+              (animationDuration). Using javaScript when each button is clicked,
+              or the slider input changes the animation is affected. There are
+              also sounds that play based on certain conditions (end of an
+              iteration or when the pause button is clicked)
+            </p>
+          </article>
           <br />
           <br />
           <div id="animation-area">
@@ -159,15 +167,16 @@
         <!--end of animation section-->
         <section id="video-section" class="main-section">
           <h2>Video</h2>
-          <p>
-            <br /><br />
-            In this section, I have included a Youtube video utilising an iframe
-            element and the embed feature available as a share option on
-            youtube. The iframe is within a containing Div which I have styled
-            to match the rest of the site.
-            <br />
-            <br />
-          </p>
+          <article>
+            <p>
+              In this section, I have included a Youtube video utilising an
+              iframe element and the embed feature available as a share option
+              on youtube. The iframe is within a containing Div which I have
+              styled to match the rest of the site.
+              <br />
+              <br />
+            </p>
+          </article>
           <div id="youtube-video-container">
             <h2>YouTube Hosted Video</h2>
             <iframe
@@ -180,14 +189,19 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
+            <!-- end of youtube-video-iframe -->
           </div>
-          <p>
-            I have also included a Hosted video example. This is achieved using
-            the HTML5 semantic video tag, The key word "controls" gives the
-            video player user controls and different source files are accessed
-            through relative paths to the video folder. This is to ensure that
-            as many browsers as possible can play the content.
-          </p>
+          <!-- end of youtube-video-container-->
+          <article>
+            <p>
+              I have also included a Hosted video example. This is achieved
+              using the HTML5 semantic video tag, The key word "controls" gives
+              the video player user controls and different source files are
+              accessed through relative paths to the video folder. This is to
+              ensure that as many browsers as possible can play the content.
+            </p>
+          </article>
+          <!-- end of explanation article -->
           <div id="hosted-video-container">
             <h2>Locally Hosted Video</h2>
             <video controls muted id="hosted-vid">
@@ -196,20 +210,25 @@
 
               This browser does not support HTML5 video
             </video>
+            <!-- end of video element -->
           </div>
+          <!-- end of hosted video container -->
         </section>
         <!--end of video section-->
         <section id="audio-section" class="main-section">
           <h2>Audio</h2>
-          <p>
-            In this section I have included an audio file using the HTML5
-            semantic audio tag. Similar to the video tag I provide it with the
-            keyword "controls" to allow the user to interact with it and provide
-            a relative path to the various source options contained in the
-            sample audio folder, within the audio folder. I have included an
-            image and both elements are held within container divs so they can
-            be styled uniformly.
-          </p>
+          <article>
+            <p>
+              In this section I have included an audio file using the HTML5
+              semantic audio tag. Similar to the video tag I provide it with the
+              keyword "controls" to allow the user to interact with it and
+              provide a relative path to the various source options contained in
+              the sample audio folder, within the audio folder. I have included
+              an image and both elements are held within container divs so they
+              can be styled uniformly.
+            </p>
+          </article>
+          <!-- end of explanation article -->
           <div id="audio-container">
             <img
               id="audio-img"
@@ -217,6 +236,7 @@
               alt="It wont be like this all the time album cover. Green highlighting"
               srcset=""
             />
+            <!-- end of image -->
             <audio controls>
               <source
                 src="audio/sample audio/15 Cold Days From The Birdhouse Live-[AudioTrimmer.com].mp3"
@@ -236,25 +256,28 @@
         <!--end of audio section-->
         <section id="gallery-section" class="main-section">
           <h2>Gallery</h2>
-          <p>
-            In this section, I have created an image gallery using HTML, CSS and
-            javascript.
-            <br /><br />
-            HTML:
-            <br />
-            The images are included using the HTML5 semantic img tag.
-            <br /><br />
-            CSS
-            <br />
-            CSS is used to apply various classes which help to control the
-            transitions and the appearance if the images.
-            <br /><br />
-            javaScript:
-            <br />
-            javaScript is used to apply an active class to the selected image.
-            There are forward and back buttons, and bullets which allow the user
-            to select a specific image.
-          </p>
+          <article>
+            <p>
+              In this section, I have created an image gallery using HTML, CSS
+              and javascript.
+              <br /><br />
+              HTML:
+              <br />
+              The images are included using the HTML5 semantic img tag.
+              <br /><br />
+              CSS
+              <br />
+              CSS is used to apply various classes which help to control the
+              transitions and the appearance if the images.
+              <br /><br />
+              javaScript:
+              <br />
+              javaScript is used to apply an active class to the selected image.
+              There are forward and back buttons, and bullets which allow the
+              user to select a specific image.
+            </p>
+          </article>
+          <!-- end of explanation article -->
           <!-- Slideshow container -->
           <div class="slideshow-container">
             <!-- Full-width images with number and caption text -->
@@ -306,12 +329,15 @@
         <!--end of gallery section-->
         <section id="About-section" class="main-section">
           <h2>ABOUT</h2>
-          <p>
-            In this section, I have included various examples of inline styling
-            and special characters such as HTML entities, bold and italic font,
-            and subscript and superscript examples. I have also included the pre
-            tag and an example usage.
-          </p>
+          <article>
+            <p>
+              In this section, I have included various examples of inline
+              styling and special characters such as HTML entities, bold and
+              italic font, and subscript and superscript examples. I have also
+              included the pre tag and an example usage.
+            </p>
+          </article>
+          <!-- end of explanation article -->
           <h3>&lt;THE TWILIGHT SAD&gt;</h3>
 
           <p>
@@ -348,7 +374,7 @@
             more streamlined, it was released in 2009 to acclaim.
           </p>
 
-          <p class="yanone-kaffeesatt">
+          <p>
             The band describes their sound as "folk with layers of noise", and
             music critics have described the band as
             <i>"perennially unhappy"</i> in italics.
@@ -370,24 +396,27 @@
         <!--end of gallery section-->
         <section id="form-section" class="main-section">
           <h2>Contact Form</h2>
-          <p>
-            In this section, I have created a contact form using HTML and CSS
-            <br /><br />
-            HTML:
-            <br />
-            The form itself is created with an HTML 5 semantic form tag. Each
-            input I use the relevant type including text for the name, email for
-            email, date for DOB, radio buttons for gender and checkboxes for the
-            options. I have included the keyword "required" to allow for client
-            side validation utilising the input types. There are 2 buttons, one
-            to clear/reset the form and a dummy submit button. I have used a
-            table tag to help with alignment.
-            <br /><br />
-            CSS:
-            <br />
-            The styling has been used to be responsive, shrinking on smaller
-            screen.
-          </p>
+          <article>
+            <p>
+              In this section, I have created a contact form using HTML and CSS
+              <br /><br />
+              HTML:
+              <br />
+              The form itself is created with an HTML 5 semantic form tag. Each
+              input I use the relevant type including text for the name, email
+              for email, date for DOB, radio buttons for gender and checkboxes
+              for the options. I have included the keyword "required" to allow
+              for client side validation utilising the input types. There are 2
+              buttons, one to clear/reset the form and a dummy submit button. I
+              have used a table tag to help with alignment.
+              <br /><br />
+              CSS:
+              <br />
+              The styling has been used to be responsive, shrinking on smaller
+              screen.
+            </p>
+          </article>
+          <!-- end of explanation article -->
           <form
             method="POST"
             action="https://softwareacademy.ie/php/send-email.php"
@@ -523,17 +552,20 @@
         <!--end of form section-->
         <section id="location-section" class="main-section">
           <h2>Location</h2>
-          <p>
-            In this section, I have included an iframe, which holds a Bing map.
-            Using the location API and a button the users location will be
-            established and displayed as coordinates, and shown on the map.
-          </p>
+          <article>
+            <p>
+              In this section, I have included an iframe, which holds a Bing
+              map. Using the location API and a button the users location will
+              be established and displayed as coordinates, and shown on the map.
+            </p>
+          </article>
+          <!-- end of explanation article -->
           <div id="location-display-container">
             <h3>Latitude:</h3>
-            <br />
+
             <span id="lat-display"></span>
             <h3>Longitude:</h3>
-            <br />
+
             <span id="long-display"></span>
             <br />
             <button id="get-location" class="general-btns">
@@ -547,8 +579,8 @@
               <iframe
                 id="bing-map"
                 width="500"
-                height="400"
-                src="https://www.bing.com/maps/embed?h=400&w=500&cp=52.35479999999998~-7.9348000000000045&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                height="500"
+                src="https://www.bing.com/maps/embed?h=500&w=500&cp=52.35479999999998~-7.9348000000000045&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                 scrolling="no"
               >
               </iframe>
@@ -569,6 +601,7 @@
     <!-- end of wrapper -->
     <script src="js/rgbToHex.js"></script>
     <!-- utility function for converting rgb values to hex values -->
+
     <script src="js/app.js"></script>
   </body>
 </html>

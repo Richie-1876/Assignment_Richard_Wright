@@ -34,9 +34,6 @@ body {
 #wrapper {
   min-width: 300px;
 }
-.yanone-kaffeesatt {
-  font-family: "Yanone Kaffeesatz", sans-serif;
-}
 
 /*******************************************
                 MODAL 
@@ -69,6 +66,10 @@ body {
   text-shadow: 1px 1px 1px #5a6066;
   border: 2px solid var(--border-color1);
   box-shadow: 5px 5px 5px var(--highlight);
+}
+/* :first-child sudo selector example */
+#assignment-details h3:first-child {
+  color: red;
 }
 #assignment-details h3 {
   font-size: larger;
@@ -108,6 +109,9 @@ body {
   top: 0;
   justify-content: space-between;
   z-index: 999;
+  box-shadow: rgba(255, 255, 255, 0.4) 0px 5px,
+    rgba(255, 255, 255, 0.3) 0px 10px, rgba(255, 255, 255, 0.2) 0px 15px,
+    rgba(255, 255, 255, 0.1) 0px 20px, rgba(255, 255, 255, 0.05) 0px 25px;
 }
 #nav-left {
   width: 80%;
@@ -115,11 +119,7 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-/* Hide burger menu icon (first li in nav-left ul)
-Element:first-child is a sudo selector  */
-/* #nav-left ul li:first-child {
-  display: none;
-} */
+
 #nav-left #links-menu #burger {
   display: none;
 }
@@ -140,7 +140,6 @@ Element:first-child is a sudo selector  */
   display: flex;
   justify-content: space-between;
   width: 80%;
-  /* margin: 0; */
 }
 #nav-left li {
   list-style-type: none;
@@ -150,26 +149,29 @@ Element:first-child is a sudo selector  */
   justify-content: space-around;
   width: 10%;
 }
+#burger {
+  padding: 15px;
+}
 
 #main-nav a {
   display: block;
-  padding: 5px 7px;
+  padding: 5px 15px;
   text-decoration: none;
   font-family: var(--font1);
   /* Text-shadow example */
   text-shadow: 1px 1px 2px #0c0d0e;
   color: #8fc1e3;
   line-height: 50px;
-  font-size: 23px;
+  font-size: 1.7vw;
   font-weight: 700;
   transition: all 0.15s;
 }
+/* DECIDED AGAINST STYLING VISITED */
 #main-nav a:visited {
   /* color: black; */
 }
 #main-nav a:hover {
   color: #f7f9fb;
-  /* background-color: var(--header-color1); */
 }
 #main-nav a:active {
   /* color: #f7f9fb; */
@@ -184,7 +186,6 @@ Element:first-child is a sudo selector  */
 }
 #nav-right table,
 #nav-right td {
-  /* border: 2px solid white; */
   border-collapse: collapse;
   font-family: var(--font2);
   color: white;
@@ -194,11 +195,16 @@ Element:first-child is a sudo selector  */
 }
 #preference-panel {
   position: absolute;
-  /* height: 200px;*/
-  width: 300px;
+  width: 310px;
   background-color: var(--main-nav);
+  border-bottom-left-radius: 50px;
+  border-left: 2px solid #31708e;
+  border-bottom: 2px solid #31708e;
   right: 0;
-  padding: 10px;
+  padding: 15px;
+  box-shadow: rgba(255, 255, 255, 0.4) -5px 5px,
+    rgba(255, 255, 255, 0.3) -10px 10px, rgba(255, 255, 255, 0.2) -15px 15px,
+    rgba(255, 255, 255, 0.1) -20px 20px, rgba(255, 255, 255, 0.05) -25px 25px;
   display: none;
 }
 
@@ -215,7 +221,6 @@ Element:first-child is a sudo selector  */
   top: -100;
   left: -75px;
   visibility: hidden;
-  /* transition: all 0.3s; */
 }
 
 #nav-right:hover #tooltip {
@@ -242,7 +247,9 @@ Element:first-child is a sudo selector  */
   padding-bottom: 50px;
   margin: 20px;
   /* Box shadow example */
-  box-shadow: 5px 5px 5px var(--highlight);
+  box-shadow: rgba(255, 255, 255, 0.4) 5px 5px,
+    rgba(255, 255, 255, 0.3) 10px 10px, rgba(255, 255, 255, 0.2) 15px 15px,
+    rgba(255, 255, 255, 0.1) 20px 20px, rgba(255, 255, 255, 0.05) 25px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -280,7 +287,7 @@ main h2 {
                 BUTTONS 
 *******************************************/
 #reset-username-btn {
-  width: 97%;
+  width: 100%;
   background-color: rgba(255, 255, 0, 0.514);
 }
 #reset-username-btn:hover {
@@ -317,6 +324,10 @@ main h2 {
 *******************************************/
 #username-section {
   text-align: center;
+  /* GOOGLE FONT EXAMPLE */
+  font-family: "Bangers", cursive;
+  font-size: 3vw;
+  letter-spacing: 3px;
   border-radius: 50px;
 }
 /*******************************************
@@ -336,7 +347,6 @@ main h2 {
   border-radius: 50%;
   background-color: var(--highlight);
   position: absolute;
-  /* animation: animation1 2s infinite; */
   animation-name: animation1;
   animation-play-state: paused;
   animation-iteration-count: infinite;
@@ -391,7 +401,6 @@ main h2 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* height: 90vh; */
 }
 #youtube-embed,
 #hosted-vid {
@@ -640,6 +649,7 @@ textarea {
   justify-content: space-around;
   margin-bottom: 20px;
 }
+
 #get-location {
   background-color: green;
   width: 70%;
@@ -670,23 +680,31 @@ textarea {
 /*******************************************
                 MEDIA QUERIES
 *******************************************/
-/* CSS to be applied for a screen width up to 768px*/
+/* CSS to be applied for a screen width up to 800px*/
 @media screen and (max-width: 800px) {
-  /* #wrapper {
-    width: 100%;
-  } */
   #main-content {
     width: 98%;
   }
   #nav-left #links-menu #burger {
     display: block;
   }
+  #nav-left {
+    width: 100%;
+  }
+  #main-nav a {
+    font-size: 23px;
+  }
 
   #links-menu #main-page-links-list {
+    margin-top: 0;
     flex-direction: column;
-    /* position: absolute; */
+    position: absolute;
+    background-color: var(--main-nav);
     display: none;
     padding-inline-start: 10px;
+  }
+  #links-menu #main-page-links-list li {
+    width: 100vw;
   }
 
   #youtube-video-container {
@@ -721,15 +739,12 @@ textarea {
   #audio-img {
     height: 400px;
   }
-  /* #nav-left ul li:first-child {
-    display: block;
-  } */
 
   #back-forward-btns {
     display: none;
   }
 } /*end of 788px media query*/
-/* CSS to be applied for a screen width up to 300px*/
+/* CSS to be applied for a screen width up to 450px*/
 @media screen and (max-width: 450px) {
   #main-content {
     width: 100%;
@@ -753,9 +768,4 @@ textarea {
   textarea {
     width: 175px;
   }
-
-  /* Display burger menu */
-  /* #nav-left ul li:first-child {
-    display: block;
-  } */
-} /*end of 300px media query*/
+} /*end of 450px media query*/

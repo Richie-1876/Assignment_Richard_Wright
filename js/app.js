@@ -121,7 +121,6 @@ prefsCancelButton.addEventListener("click", () => {
 
 // Event listener (click) for GET LOCATION BUTTON.
 getLocationBtn.addEventListener("click", () => {
-  console.log("clicked");
   getAndDisplayLocation();
 });
 
@@ -497,25 +496,11 @@ function showSlides(n) {
 /////////////////////////////////////////
 /****************************************
  * Name: getAndDisplayLocation()
- * Purpose: Get the users location usint the location API and display coords and position on map.
+ * Purpose: Get the users location using the location API and display coords and position on map.
  * Parameters: (0)
  * Returns: no return value
  ****************************************/
 function getAndDisplayLocation() {
-  console.log("clicked");
-  let mapLink = "";
-  //function to run if successful
-  function success(position) {
-    const lat = position.coords.latitude;
-    const long = position.coords.longitude;
-
-    latDisplay.textContent += `${lat}`;
-    longDisplay.textContent += `${long}`;
-
-    mapLink = `https://www.bing.com/maps/embed?h=400&w=500&cp=${lat}~-${long}&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8`;
-
-    bingMap.src = mapLink;
-  }
   function error() {
     console.log("something went wrong");
   }
@@ -523,6 +508,14 @@ function getAndDisplayLocation() {
     latDisplay.textContent = "Geolocation is not supported by your browser";
     longDisplay.textContent = "";
   } else {
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const long = position.coords.longitude;
+
+      latDisplay.textContent += `${lat}`;
+      longDisplay.textContent += `${long}`;
+
+      bingMap.src = `https://www.bing.com/maps/embed?h=500&w=500&cp=${lat}~${long}&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8`;
+    });
   }
 }
