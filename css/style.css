@@ -219,7 +219,7 @@ body {
   border-radius: 50px;
   line-height: 25px;
   position: absolute;
-  top: -100;
+  /* top: -100; */
   left: -75px;
   visibility: hidden;
 }

@@ -75,13 +75,15 @@ animationPauseBtn.addEventListener("click", () => {
 // Event Listener (click) for RESET USERNAME BUTTON
 resetUsernameBtn.addEventListener("click", () => {
   //prompt the user
-  let username = prompt("Ok, What can I call you then?");
-  //save response to local storage
-  saveUsernameToLocalStorage(username);
-  //display value stored in local storage
-  alert("The username has been changed");
-  usernameDisplay.textContent = localStorage.username;
-  togglePreferencePanel();
+  if (confirm("Are you sure you want to change your username?")) {
+    let username = prompt("Ok, What can I call you then?");
+    //save response to local storage
+    saveUsernameToLocalStorage(username);
+    //display value stored in local storage
+    alert(`The username has been changed to ${username}`);
+    usernameDisplay.textContent = localStorage.username;
+    togglePreferencePanel();
+  }
 });
 
 // Event Listener (click) for TEST BUTTON
@@ -92,21 +94,28 @@ resetUsernameBtn.addEventListener("click", () => {
 
 // Event listener (click) for RESET DEFAULTS BUTTON.
 prefsResetDefaults.addEventListener("click", () => {
-  if (localStorage["defaults"] != null) {
-    // apply the preferences to the page
-    applyPreferences(getPreferences("defaults"));
-    togglePreferencePanel();
-  } else {
-    console.log(
-      "Cannot reset defaults as no default preferences were found in local storage"
-    );
+  // check the user wants to change to the site defaults
+  if (confirm("Are you sure you want to reset to site defaults?")) {
+    if (localStorage["defaults"] != null) {
+      // apply the preferences to the page
+      applyPreferences(getPreferences("defaults"));
+      togglePreferencePanel();
+      alert("Site settings have been set to defaults");
+    } else {
+      console.log(
+        "Cannot reset defaults as no default preferences were found in local storage"
+      );
+    }
   }
 });
 // Event listener (click) for PREFERENCES SAVE BUTTON.
 prefsSaveButton.addEventListener("click", () => {
-  // let userPreferences = getPreferencePanelValues();
-  savePreferences(getPreferencePanelValues(), "userPreferences");
-  togglePreferencePanel();
+  //Ask user to confirm that they want to save the new settings.
+  if (confirm("Are you sure you want to change the site settings?")) {
+    savePreferences(getPreferencePanelValues(), "userPreferences");
+    togglePreferencePanel();
+    alert("Site settings have been saved");
+  }
 });
 // Event listener (click) for PREFERENCES CANCEL BUTTON.
 prefsCancelButton.addEventListener("click", () => {
